@@ -1,0 +1,21 @@
+Name                                     Stmts   Miss  Cover
+------------------------------------------------------------
+articlesapp\__init__.py                      0      0   100%
+articlesapp\admin.py                         4      0   100%
+articlesapp\apps.py                          4      0   100%
+articlesapp\filters.py                      14      2    86%
+articlesapp\migrations\0001_initial.py       7      0   100%
+articlesapp\migrations\__init__.py           0      0   100%
+articlesapp\models.py                       28      4    86%
+articlesapp\serializers.py                  54     10    81%
+articlesapp\test_views.py                   92      0   100%
+articlesapp\urls.py                          7      0   100%
+articlesapp\views.py                        65      1    98%
+articlesproject\__init__.py                  0      0   100%
+articlesproject\asgi.py                      4      4     0%
+articlesproject\settings.py                 20      0   100%
+articlesproject\urls.py                      3      0   100%
+articlesproject\wsgi.py                      4      4     0%
+manage.py                                   12      2    83%
+------------------------------------------------------------
+TOTAL                                      318     27    92%

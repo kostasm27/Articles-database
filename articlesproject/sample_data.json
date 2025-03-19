@@ -1,0 +1,100 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "username": "admin",
+      "password": "pbkdf2_sha256$870000$IGQ4zJgokPN4udZDfWNUxb$588mBM49r7G+Is+zPeOxUOpb3BjLQhfolqqGS4+S4aI=",
+      "is_superuser": true,
+      "is_staff": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "username": "test_user",
+      "password": "pbkdf2_sha256$870000$urVYFOSl7qVF6sW0d6yFpL$X+zNjBC9Fki4OWY/yDK0PLeF41Y/XE3BCKIkSdUQoFE=",
+      "is_superuser": false,
+      "is_staff": false,
+      "is_active": true
+    }
+  },
+  {
+    "model": "articlesapp.author",
+    "pk": 1,
+    "fields": {
+      "name": "author 1"
+    }
+  },
+  {
+    "model": "articlesapp.author",
+    "pk": 2,
+    "fields": {
+      "name": "author 2"
+    }
+  },
+  {
+    "model": "articlesapp.tag",
+    "pk": 1,
+    "fields": {
+      "name": "Python"
+    }
+  },
+  {
+    "model": "articlesapp.tag",
+    "pk": 2,
+    "fields": {
+      "name": "Django"
+    }
+  },
+  {
+    "model": "articlesapp.article",
+    "pk": 1,
+    "fields": {
+      "identifier": "article1",
+      "publication_date": "2025-03-01",
+      "title": "Django",
+      "abstract": "Django",
+      "user": 1,
+      "authors": [1, 2],
+      "tags": [1, 2]
+    }
+  },
+  {
+    "model": "articlesapp.article",
+    "pk": 2,
+    "fields": {
+      "identifier": "article2",
+      "publication_date": "2025-03-15",
+      "title": "Python",
+      "abstract": "Python",
+      "user": 2,
+      "authors": [2],
+      "tags": [1]
+    }
+  },
+  {
+    "model": "articlesapp.comment",
+    "pk": 1,
+    "fields": {
+      "article": 1,
+      "user": 1,
+      "content": "Django",
+      "created_at": "2025-03-02T10:00:00Z",
+      "updated_at": "2025-03-02T10:00:00Z"
+    }
+  },
+  {
+    "model": "articlesapp.comment",
+    "pk": 2,
+    "fields": {
+      "article": 2,
+      "user": 2,
+      "content": "Python",
+      "created_at": "2025-03-16T12:00:00Z",
+      "updated_at": "2025-03-16T12:00:00Z"
+    }
+  }
+]

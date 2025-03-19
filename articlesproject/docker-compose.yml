@@ -1,0 +1,42 @@
+services:
+  db:
+    container_name: db
+    image: postgres:15
+    environment:
+      - POSTGRES_USER=${PG_USER}
+      - POSTGRES_PASSWORD=${PG_PASSWORD}
+      - POSTGRES_DB=${PG_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  articlesapp:
+    build: .
+    command: >
+      bash -c "python manage.py migrate &&
+              python manage.py loaddata sample_data.json &&
+              python manage.py runserver 0.0.0.0:8000"
+    container_name: articlesapp
+    ports:
+      - "8000:8000"
+    environment:
+      - PG_USER=${PG_USER}
+      - PG_PASSWORD=${PG_PASSWORD}
+      - PG_DB=${PG_DB}
+      - PG_HOST=${PG_HOST}
+      - PG_PORT=${PG_PORT}
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - .:/app
+
+
+volumes:
+  pgdata:
